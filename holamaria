@@ -115,6 +115,7 @@ void estrellita::tipo(int nl,int nv){
     else if(nl>=7)
         cout<<"figura de muchos lados"<<endl;
 }
+Probando :3
 
 
 
