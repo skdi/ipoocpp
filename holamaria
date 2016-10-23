@@ -50,14 +50,25 @@ public:
 #include "poligono.h"
 #include <math.h>
 
-const double area(float radio){
+double area(float radio){
     return pi*pow(radio,2);
 }
 
 
-const double area(float ladox,float ladoy){
+double area(float ladox,float ladoy){
     return ladox*ladoy;
 }
+
+double area(float c1,float c2,float hi){
+    double aux=
+            (1/4)*sqrt((c1+c2-hi)*
+                       (c1-c2+hi)*
+                       (-c1+c2+hi)*
+                       (c1+c2+hi));
+    return aux;
+}
+
+
 
 
 
