@@ -1,0 +1,64 @@
+//HEADER ********************************
+
+#ifndef POLIGONO_H
+#define POLIGONO_H
+#define pi 3,1416
+
+
+class poligono{
+public:
+    poligono();
+    virtual const double area()=0;
+};
+
+class circulo:public poligono{
+public:
+    circulo();
+    float radio,angulo;
+    double area(float radio);
+
+
+};
+class triangulo:public poligono{
+public:
+    triangulo();
+    float cateto1,cateto2,hipotenusa;
+    double area(float cateto1,float cateto2,float hipotenusa);
+    void tipo(float cateto1,float cateto2,float hipotenusa);
+
+};
+class cuadrado:public poligono{
+public:
+    cuadrado();
+    float ladox,ladoy;
+    double area(float ladox,float ladoy);
+
+};
+class estrellita:public poligono{
+public:
+    estrellita();
+    float n_lados,n_vertices;
+    double area(float n_lados,float n_vertices);
+    void tipo(float n_lados,float n_vertices);
+};
+
+
+
+#endif // POLIGONO_H
+//cpp 
+
+#include "poligono.h"
+#include <math.h>
+
+const double area(float radio){
+    return pi*pow(radio,2);
+}
+
+
+const double area(float ladox,float ladoy){
+    return ladox*ladoy;
+}
+
+
+
+
