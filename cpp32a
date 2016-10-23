@@ -1,0 +1,33 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cout << "tamano n: ";
+    cin >> n;
+
+    int aux;
+    cout << "No 1 es: ";
+    cin >> aux;
+    int max = aux;
+    int min = aux;
+
+    for (int i=1; i<n;i++){
+        int x;
+        cout << "No " << i+1 << " es: ";
+        cin >> x;
+        aux = x;
+        if (max < x){
+           max = x;
+        }
+        if (min > x){
+           min = x;
+        }
+    }
+    cout << "max: " << max << endl;
+    cout << "min: " << min << endl;
+    cout << "mean: " << (double) (max+min)/2 << endl;
+    cout << "range: " << max - min << endl;
+}
