@@ -99,7 +99,7 @@ void triangulo::tipo(float c1,float c2,float hi){
 }
 
 //tipo estrellita
-void estrellita::tipo(int nl,int nv){
+void estrellita_regular::tipo(int nl,int nv){
 
     if(nl==1)
         cout<<"punto"<<endl;
