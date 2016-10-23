@@ -17,14 +17,15 @@ public:
     circulo();
     float radio,angulo;
     double area(float radio);
-
-
+    double perimetro(float radio);
 };
+
 class triangulo:public poligono{
 public:
     triangulo();
     float cateto1,cateto2,hipotenusa;
     double area(float cateto1,float cateto2,float hipotenusa);
+    double perimetro(float cateto1, float cateto2, float hipotenusa);
     void tipo(float cateto1,float cateto2,float hipotenusa);
 
 };
@@ -33,8 +34,9 @@ public:
     cuadrado();
     float ladox,ladoy;
     double area(float ladox,float ladoy);
-
+    double perimetro(float ladox, float ladoy);    
 };
+
 class estrellita_regular:public poligono{
 public:
     estrellita();
@@ -62,9 +64,19 @@ double circulo::area(float radio){
     return pi*pow(radio,2);
 }
 
+double circulo::perimetro(float radio)
+{
+    return 2*pi*radio;
+}
+
 //cuadrilatero
 double cuadrado::area(float ladox,float ladoy){
     return ladox*ladoy;
+}
+
+double cuadrado::perimetro(float ladox, float ladoy)
+{
+    return 2*ladox+2*ladoy;
 }
 
 //triangulo
@@ -76,6 +88,10 @@ double triangulo::area(float c1,float c2,float hi){
                        (c1+c2+hi));
     return aux;
 }
+ double triangulo::perimetro(float c1, float c2, float hi)
+ {
+    return c1+c2+hi;
+ }
 
 //estrellita
 double estrellita_regular::area(float perimetro,float apotema){
