@@ -37,10 +37,14 @@ public:
 class estrellita:public poligono{
 public:
     estrellita();
-    float n_lados,n_vertices;
-    double area(float n_lados,float n_vertices);
-    void tipo(float n_lados,float n_vertices);
+    int n_lados,n_vertices;
+    double area(int n_lados,int n_vertices);
+    void tipo(int n_lados,int n_vertices);
 };
+
+
+
+#endif // POLIGONO_H
 
 
 
@@ -53,17 +57,18 @@ public:
 using namespace std;
 
 //circulo
-double area(float radio){
+
+double circulo::area(float radio){
     return pi*pow(radio,2);
 }
 
 //cuadrilatero
-double area(float ladox,float ladoy){
+double cuadrado::area(float ladox,float ladoy){
     return ladox*ladoy;
 }
 
 //triangulo
-double area(float c1,float c2,float hi){
+double triangulo::area(float c1,float c2,float hi){
     double aux=
             (1/4)*sqrt((c1+c2-hi)*
                        (c1-c2+hi)*
@@ -73,7 +78,7 @@ double area(float c1,float c2,float hi){
 }
 
 //estrellita
-double area(int nl,int nv){
+double estrellita::area(int nl,int nv){
     cout<<"nose :c "<<endl;
     /*double ar;
     for(int i=1;i<=nl;i++){
@@ -81,7 +86,7 @@ double area(int nl,int nv){
     }*/
 }
 //tipo triangulo
-void tipo(float c1,float c2,float hi){
+void triangulo::tipo(float c1,float c2,float hi){
     if(c1==c2==hi)
         cout<<"triangulo equilatero"<<endl;
     else if((c1==c2)!=hi)
@@ -93,7 +98,7 @@ void tipo(float c1,float c2,float hi){
 }
 
 //tipo estrellita
-void tipo(float nl,float nv){
+void estrellita::tipo(int nl,int nv){
 
     if(nl==1)
         cout<<"punto"<<endl;
@@ -110,6 +115,10 @@ void tipo(float nl,float nv){
     else if(nl>=7)
         cout<<"figura de muchos lados"<<endl;
 }
+
+
+
+
 
 
 
