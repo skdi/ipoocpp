@@ -46,19 +46,23 @@ public:
 
 #endif // POLIGONO_H
 //cpp 
-
 #include "poligono.h"
+#include <iostream>
 #include <math.h>
 
+using namespace std;
+
+//circulo
 double area(float radio){
     return pi*pow(radio,2);
 }
 
-
+//cuadrilatero
 double area(float ladox,float ladoy){
     return ladox*ladoy;
 }
 
+//triangulo
 double area(float c1,float c2,float hi){
     double aux=
             (1/4)*sqrt((c1+c2-hi)*
@@ -67,6 +71,51 @@ double area(float c1,float c2,float hi){
                        (c1+c2+hi));
     return aux;
 }
+
+//estrellita
+double area(int nl,int nv){
+    cout<<"nose :c "<<endl;
+    /*double ar;
+    for(int i=1;i<=nl;i++){
+        ar+=i*
+    }*/
+}
+//tipo triangulo
+void tipo(float c1,float c2,float hi){
+    if(c1==c2==hi)
+        cout<<"triangulo equilatero"<<endl;
+    else if((c1==c2)!=hi)
+        cout<<"triangulo isoceles"<<endl;
+    else if(c1!=c2!=hi)
+        cout<<"triangulo escaleno"<<endl;
+    else if(sqrt(pow(c1,2)+pow(c2,2))==hi)
+        cout<<"triangulo rectangulo"<<endl;
+}
+
+//tipo estrellita
+void tipo(float nl,float nv){
+
+    if(nl==1)
+        cout<<"punto"<<endl;
+    else if(nl==2)
+        cout<<"recta"<<endl;
+    else if(nl==3)
+        cout<<"triangulo"<<endl;
+    else if(nl==4)
+        cout<<"cuadrilatero"<<endl;
+    else if(nl==5)
+        cout<<"pentagono"<<endl;
+    else if(nl==6)
+        cout<<"hexagono"<<endl;
+    else if(nl>=7)
+        cout<<"figura de muchos lados"<<endl;
+}
+
+
+
+
+
+
 
 
 
