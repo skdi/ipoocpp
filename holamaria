@@ -9,6 +9,7 @@ class poligono{
 public:
     poligono();
     virtual const double area()=0;
+    virtual const double perimetro()=0;
 };
 
 class circulo:public poligono{
@@ -34,15 +35,14 @@ public:
     double area(float ladox,float ladoy);
 
 };
-class estrellita:public poligono{
+class estrellita_regular:public poligono{
 public:
     estrellita();
-    int n_lados,n_vertices;
-    double area(int n_lados,int n_vertices);
+    int n_lados,n_vertices, apotema, lado;
+    double area(float perimetro, float apotema);
+    double perimetro(float lado, float n_lados);
     void tipo(int n_lados,int n_vertices);
 };
-
-
 
 #endif // POLIGONO_H
 
@@ -78,13 +78,14 @@ double triangulo::area(float c1,float c2,float hi){
 }
 
 //estrellita
-double estrellita::area(int nl,int nv){
-    cout<<"nose :c "<<endl;
-    /*double ar;
-    for(int i=1;i<=nl;i++){
-        ar+=i*
-    }*/
+double estrellita_regular::area(float perimetro,float apotema){
+    return (perimetro*apotema)/2;
 }
+double estrellita_regular::perimetro(float lado, float n_lados)
+{
+    return lado*n_lados;
+}
+
 //tipo triangulo
 void triangulo::tipo(float c1,float c2,float hi){
     if(c1==c2==hi)
@@ -115,7 +116,6 @@ void estrellita::tipo(int nl,int nv){
     else if(nl>=7)
         cout<<"figura de muchos lados"<<endl;
 }
-Probando :3
 
 
 
