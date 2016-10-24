@@ -134,20 +134,34 @@ void estrellita_regular::tipo(int nl,int nv){
 }
 int main()
 {
-    cout<<"El Area del circulo es:"<<circulo.area(1.75);
-    cout<<"El Perimetro del circulo es:"<<circulo.perimetro(1.5);
+    int variable;
+    while(true)
+    {
 
-    cout<<"El Area del cuadrado es:"<<cuadrado.area(4.0,4.0);
-    cout<<"El perimetro del cuadrado es:"<<cuadrado.perimetro(6.0;6.0);
-
-    cout<<"El Area del triangulo es:"<<triangulo.area(1.0,2.5,3.0);
-    cout<<"El Perimetro del triangulo es:"<<triangulo.perimetro(3.0,4.5,5.5);
-
-    cout<<"El area de la estrellita es:"<<estrellita_regular.area(8.0,9.0);
-    cout<<"El perimetro de la estrellita es:"<<estrellita_regular.perimetro(7.0,6.5);
+        cout<<"ingresa que desea consultar/n 1.- area circulo/n"<<endl;
+        cin>>variable;
+        if(variable==1)
+        {
+            cout<<"El Area del circulo es:"<<circulo.area(1.75);
+            cout<<"El Perimetro del circulo es:"<<circulo.perimetro(1.5);
+        }
+        if(variable==2)
+        {
+            cout<<"El Area del cuadrado es:"<<cuadrado.area(4.0,4.0);
+            cout<<"El perimetro del cuadrado es:"<<cuadrado.perimetro(6.0;6.0);
+        }
+        if(variable==3)
+        {
+            cout<<"El Area del triangulo es:"<<triangulo.area(1.0,2.5,3.0);
+            cout<<"El Perimetro del triangulo es:"<<triangulo.perimetro(3.0,4.5,5.5);
+        }
+        if(variable==4)
+        {
+            cout<<"El area de la estrellita es:"<<estrellita_regular.area(8.0,9.0);
+            cout<<"El perimetro de la estrellita es:"<<estrellita_regular.perimetro(7.0,6.5);
+        }
+        return 0;
 }
-
-
 
 
 
