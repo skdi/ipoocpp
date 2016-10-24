@@ -133,7 +133,34 @@ void estrellita_regular::tipo(int nl,int nv){
         cout<<"figura de muchos lados"<<endl;
 }
 
+int main(){
 
+    //NO ENCONTRE OTRA FORMA DE INICIALIZAR LOS DATOS SI EN EL CONSTRUCTOR DE LA CLASE
+    //ESTAS LOS DATOS TIPO PUNTO(ESTRUCTURA) ->  Figura(Punto _Inicio, Punto _Final)
+    /*Punto punto1, punto2;
+    punto1.x = 1;
+    punto1.y = 2;
+
+    punto2.x = 2;
+    punto2.y = 2;
+
+    poligono poligono(punto1, punto2);*/
+
+    cuadrado cuadradito(1,1, 6,1);
+    cuadradito.mostrarDatos();
+
+    rectangulo rectangulito(1,1, 6,1, 2);
+    rectangulito.mostrarDatos();
+
+    circulo circulito(1,1, 8,1);
+    circulito.mostrarDatos();
+
+    triangulo triangulito(1,1, 3,1, 2,3);
+    triangulito.mostrarDatos();
+
+    return 0;
+
+}
 
 
 
