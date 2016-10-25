@@ -1,4 +1,5 @@
 #include <iostream>
+//usar const arguments
 using namespace std;
 int suma(const int a,const int b){
     return a+b;
