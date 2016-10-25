@@ -134,11 +134,19 @@ void estrellita_regular::tipo(int nl,int nv){
 }
 int main()
 {
-   circulo *a;
-   cout<<a->area(3)<<endl;
-   cout<<a->perimetro(4);
-
-
+   circulo *c;
+   cout<<"El Area del Circulo es: "<<a->area(3.5)<<endl;
+   cout<<"El Perimetro del Circulo es: "<<a->perimetro(4.0)<<endl;
+   triangulo *t;
+   cout<<"El Area del Triangulo es: "<<t->area(2.5)<<endl;
+   cout<<"El Perimetro del Triangulo es: "<<t->perimetro(4.0)<<endl;
+   cuadrado *cd;
+   cout<<"El Area del Cuadrado es: "<<cd->area(6.0)<<endl;
+   cout<<"El Perimetro del Cuadrado es: "<<cd->perimetro(7.0)<<endl;
+   estrellita_regular *e;
+   cout<<"El Area de la Estrellita es: "<<e->area(3.5)<<endl;
+   cout<<"El Perimetro de la Estrellita es: "<<e->perimetro(4.0)<<endl;
+   
 }
 
 
