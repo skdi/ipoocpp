@@ -1,3 +1,7 @@
+/*Andre Mogrovejo Martines
+  Maria Lourders Apaza
+  Brayan Alexander Lipe*/
+
 //main
 #include <iostream>
 #include "poligono.h"
