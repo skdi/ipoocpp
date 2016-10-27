@@ -10,6 +10,10 @@
 int main()
 {
    circulo *c;
+   /*circulo *c;
+   c->setx(4);
+   cout<<c->area(c->getx())<<endl;*///llamada con puntos ,ocurre un bug aun 
+   cout<<c->perimetro(4.0)<<endl;
    cout<<c->area(1)<<endl;
    cout<<c->perimetro(4.0)<<endl;
    triangulo *t;
@@ -130,7 +134,22 @@ void estrellita_regular::tipo(int nl){
 using namespace std;
 
 
-class poligono{
+class punto{
+private:
+    int x;
+    int y;
+    char *name;
+public:
+    punto(const int x=0,const int y=0);
+    int getx(){return x;}
+    int gety(){return y;}
+    void setx(int new_x){x=new_x;}
+    void sety(int new_y){y=new_y;}
+    void setname(char *nombre){name=nombre;}
+    ~punto(){cout<<"punto eliminado"<<endl;}
+};
+
+class poligono:public punto{
 public:
     poligono();
     virtual const double area()=0;
