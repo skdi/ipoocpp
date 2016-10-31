@@ -194,5 +194,13 @@ public:
     void tipo(int n_lados);
     ~estrellita_regular(){cout<<"poligono eliminado"<<endl;}
 };
-
+int main()
+{
+  punto miPunto(1,2);
+  poligono Poligono(3,4);
+  circulo Poligono(4,5);
+  triangulo Poligono(3.0,4.0,5.0);
+  cuadrado Poligono(2.0,2.0);
+  estrellita Poligono(3,5,7,6);
+} 
 #endif // POLIGONO_H
