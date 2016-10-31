@@ -1,20 +1,20 @@
+
 /*Andre Mogrovejo Martines
   Maria Lourders Apaza
   Brayan Alexander Lipe*/
 
-//main
 #include <iostream>
 #include "poligono.h"
+
 
 
 int main()
 {
    circulo *c;
-   /*circulo *c;
-   c->setx(4);
-   cout<<c->area(c->getx())<<endl;*///llamada con puntos ,ocurre un bug aun 
-   cout<<c->perimetro(4.0)<<endl;
-   cout<<c->area(1)<<endl;
+   c->setx(3);
+   int b=c->getx();
+   double a=c->area(b);
+   cout<<a<<endl;
    cout<<c->perimetro(4.0)<<endl;
    triangulo *t;
    cout<<t->area(3,3,5)<<endl;
@@ -26,11 +26,10 @@ int main()
    cout<<e->area(24,4)<<endl;
    cout<<e->perimetro(4,6)<<endl;
    e->tipo(4);
-   //delete c;
+   delete c;
 
 }
 
-//poligono.cpp
 #include "poligono.h"
 #include <iostream>
 #include <math.h>
@@ -39,7 +38,7 @@ using namespace std;
 
 //circulo
 
-double circulo::area(float radio){
+double circulo::area(int radio){
     cout<<"area circulo"<<endl;
     return pi*pow(radio,2);
 }
@@ -126,6 +125,7 @@ void estrellita_regular::tipo(int nl){
 }
 
 
+
 //poligono.h
 #ifndef POLIGONO_H
 #define POLIGONO_H
@@ -133,9 +133,8 @@ void estrellita_regular::tipo(int nl){
 #include <iostream>
 using namespace std;
 
-
 class punto{
-private:
+public:
     int x;
     int y;
     char *name;
@@ -160,8 +159,8 @@ public:
 class circulo:public poligono{
 public:
     circulo();
-    float radio,angulo;
-    double area(float radio);
+    punto radio,angulo;
+    double area(int radio);
     double perimetro(float radio);
     ~circulo(){cout<<"circulo eliminado"<<endl;}
 };
@@ -194,25 +193,5 @@ public:
     void tipo(int n_lados);
     ~estrellita_regular(){cout<<"poligono eliminado"<<endl;}
 };
-int main()
-{
-  punto miPunto(1,2);
-  poligono Poligono1(3,4);
-  Poligono1.area();
-  Poligono.perimetro();
-  circulo MiCirculo(4,5);
-  MiCirculo.area();
-  MiCirculo.perimetro();
-  triangulo MiTriangulo(3.0,4.0,5.0);
-  MiTriangulo.area();
-  MiTriangulo.perimetro();
-  MiTriangulo.tipo();
-  cuadrado MiCuadrado(2.0,2.0);
-  MiCuadrado.area();
-  MiCuadrado.perimetro();
-  estrellita MiEstrellita(3,5,7,6);
-  MiEstrellita.area();
-  MiEstrellita.perimetro();
-  MiEstrellita.tipo(7);
-} 
+
 #endif // POLIGONO_H
