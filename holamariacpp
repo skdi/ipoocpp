@@ -197,10 +197,22 @@ public:
 int main()
 {
   punto miPunto(1,2);
-  poligono Poligono(3,4);
-  circulo Poligono(4,5);
-  triangulo Poligono(3.0,4.0,5.0);
-  cuadrado Poligono(2.0,2.0);
-  estrellita Poligono(3,5,7,6);
+  poligono Poligono1(3,4);
+  Poligono1.area();
+  Poligono.perimetro();
+  circulo MiCirculo(4,5);
+  MiCirculo.area();
+  MiCirculo.perimetro();
+  triangulo MiTriangulo(3.0,4.0,5.0);
+  MiTriangulo.area();
+  MiTriangulo.perimetro();
+  MiTriangulo.tipo();
+  cuadrado MiCuadrado(2.0,2.0);
+  MiCuadrado.area();
+  MiCuadrado.perimetro();
+  estrellita MiEstrellita(3,5,7,6);
+  MiEstrellita.area();
+  MiEstrellita.perimetro();
+  MiEstrellita.tipo(7
 } 
 #endif // POLIGONO_H
