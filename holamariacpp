@@ -213,6 +213,6 @@ int main()
   estrellita MiEstrellita(3,5,7,6);
   MiEstrellita.area();
   MiEstrellita.perimetro();
-  MiEstrellita.tipo(7
+  MiEstrellita.tipo(7);
 } 
 #endif // POLIGONO_H
