@@ -215,5 +215,5 @@ double triangulo::area()
     double mod2=sqrt(pow(b.gety(),2)+pow(c.getx(),2));
     double mod3=c.getx()-a.getx();
     double s=(mod1+mod2+mod3)/2;
-    return sqrt(s*(s-mod1)*(s-mod2)*(s-mo3));
+    return sqrt(s*(s-mod1)*(s-mod2)*(s-mod3));
 }
