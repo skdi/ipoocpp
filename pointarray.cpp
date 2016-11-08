@@ -43,13 +43,13 @@ protected:
     point_array puntos;
 public:
     poligono(const point_array &pa);
-    poligono(const punto p[],const int n_puntos);
-    virtual const double area()=0;
-    virtual const double perimetro()=0;
+    poligono(punto p[],int n_puntos);
+    virtual double area()=0;
+    virtual double perimetro()=0;
     ~poligono(){cout<<"poligono eliminado"<<endl; --n_poligonos;}
     static int get_poligonos(){return n_poligonos;}
-    static int get_lados(){return puntos.getSize();}
-    const PointArray * getPoints() const {return &puntos;}
+    int get_lados(){return puntos.getSize();}
+    const point_array* getPoints() const {return &puntos;}
 
 };
 
@@ -58,11 +58,11 @@ private:
     punto x,y;
     int a,b,c,d;
 public:
-    rectangulo(x,y);
-    rectangulo(a,b,c,d);
-    double area(punto x,punto y);
+    rectangulo(punto x, punto y);
+    rectangulo(int a,int b,int c,int d);
+    double area(punto x, punto y);
     double area(int a,int b,int c,int d);
-    double perimetro();
+    //double perimetro();
     ~rectangulo(){cout<<"rectangulo eliminado"<<endl;}
 };
 
@@ -70,12 +70,11 @@ class triangulo:public poligono{
 private:
     punto a,b,c;
 public:
-    triangulo(a,b,c);
+    triangulo(punto a,punto b,punto c);
     double area();
     double perimetro();
-    ~circulo(){cout<<"circulo eliminado"<<endl;}
+    ~triangulo(){cout<<"circulo eliminado"<<endl;}
 };
-
 
 #endif // GEOMETRY_H
 #include "geometry.h"
@@ -143,13 +142,13 @@ void point_array::clear()
     resize(0);
 }
 
-int poligono::n=0;
+//int poligono:n=0;
 
 poligono::poligono(const point_array &p) :puntos(p)
 {
     ++n_poligonos;
 }
-poligono::poligono(const punto p[],const int n_puntos): puntos(p,n_puntos){
+poligono::poligono(punto p[],int n_puntos): puntos(p,n_puntos){
     ++n_poligonos;
 }
 
@@ -169,39 +168,41 @@ punto rectangulo::*upConsPoints(const punto &p1, const punto &p2, const punto &p
 
 
 
-rectangulo::rectangulo(rectangulo::x,rectangulo::y)
+rectangulo::rectangulo(punto x, punto y)
 {
     punto q,w,e,r;
-    q.setx(a.getx());
+    q.setx(x.getx());
     q.sety(0);
-    w.setx(a.getx());
-    w.sety(a.gety());
-    e.setx(b.getx());
+    w.setx(x.getx());
+    w.sety(x.gety());
+    e.setx(y.getx());
     e.sety(0);
-    r.setx(b.getx());
-    r.sety(b.gety());
+    r.setx(y.getx());
+    r.sety(y.gety());
 
-    upConsPoints(&q,&w,&e,&r);
+    upConsPoints(q,w,e,r);
 }
-rectangulo::rectangulo(rectangulo::a, rectangulo::b, rectangulo::c, rectangulo::d){
+rectangulo::rectangulo(int a, int b, int c, int d){
     punto q,w,e,r;
-    q.setx(a;
+    q.setx(a);
     q.sety(0);
-    w.setx(a;
+    w.setx(a);
     w.sety(b);
     e.setx(c);
     e.sety(0);
     r.setx(c);
     r.sety(d);
-    upConsPoints(&q,&w,&e,&r);
+    upConsPoints(q,w,e,r);
 
 }
-rectangulo::area(x,y){
+
+
+double rectangulo::area(punto x,punto y){
     int ladox=y.getx()-x.getx();
     int ladoy=y.gety()-x.gety();
     return ladox*ladoy;
 }
-rectangulo::area(a,b,c,d){
+double rectangulo::area(int a, int b, int c, int d){
     int ladox=c-a;
     int ladoy=d-b;
     return ladox*ladoy;
@@ -217,3 +218,4 @@ double triangulo::area()
     double s=(mod1+mod2+mod3)/2;
     return sqrt(s*(s-mod1)*(s-mod2)*(s-mod3));
 }
+
